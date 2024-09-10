@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 
 // Initialize express app
 const app = express();
@@ -33,11 +34,27 @@ app.use(bodyParser.json());
 // };
 
 
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
+
+// const connectdb = async () => {
+//   try {
+//     await mongoose.connect('mongodb+srv://rahulthakur2314:myPass%40word%3A2024@mydata.mongodb.net/yourDatabaseName?retryWrites=true&w=majority', {
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true,
+//     });
+//     console.log("mongodb connected using mongoose");
+//   } catch (error) {
+//     console.error("Error connecting to MongoDB", error);
+//   }
+// };
+
+// connectdb();
+
+
 
 const connectdb = async () => {
   try {
-    await mongoose.connect('mongodb+srv://rahulthakur2314:myPass%40word%3A2024@mydata.mongodb.net/yourDatabaseName?retryWrites=true&w=majority', {
+    await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
