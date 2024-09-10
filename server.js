@@ -10,10 +10,15 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/myapp', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+
+const connectdb = async ()=> {
+  await mongoose.connect('mongodb://localhost:27017/myapp', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }); 
+  console.log("mongodb connected using mongoose");
+
+} 
 
 // Define User Schema for Authentication
 const UserSchema = new mongoose.Schema({
@@ -125,6 +130,8 @@ app.delete('/availability/:id', async (req, res) => {
 // Start the server
 app.listen(5000, () => {
   console.log('Server is running on http://localhost:5000');
+  connectdb();
+  
 });
 
 
