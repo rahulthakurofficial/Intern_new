@@ -11,14 +11,30 @@ app.use(bodyParser.json());
 
 // MongoDB Connection
 
-const connectdb = async ()=> {
-  await mongoose.connect('mongodb://rahulthakur2314:myPass%40word%3A2024@<hostname>/?ssl=true&replicaSet=atlas-sf4olm-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }); 
-  console.log("mongodb connected using mongoose");
+// const connectdb = async ()=> {
+//   await mongoose.connect('mongodb://rahulthakur2314:myPass%40word%3A2024@<database>/?ssl=true&replicaSet=atlas-sf4olm-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   }); 
+//   console.log("mongodb connected using mongoose");
 
-} 
+// } 
+
+const connectdb = async () => {
+  try {
+    await mongoose.connect('mongodb://rahulthakur2314:myPass%40word%3A2024@mydata.mongodb.net/yourDatabaseName?ssl=true&replicaSet=atlas-sf4olm-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }); 
+    console.log("mongodb connected using mongoose");
+  } catch (error) {
+    console.error("Error connecting to MongoDB", error);
+  }
+};
+
+
+
+
 
 // Define User Schema for Authentication
 const UserSchema = new mongoose.Schema({
