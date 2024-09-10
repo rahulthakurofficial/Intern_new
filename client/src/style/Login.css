@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-card {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .login-card h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+  }
+  
+  .login-card input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .login-card input:focus {
+    border-color: #f5576c;
+    outline: none;
+  }
+  
+  .login-button {
+    background-color: #f5576c;
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #f093fb;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+  
+  .dashboard-links ul {
+    list-style: none;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .dashboard-links ul li {
+    font-size: 1rem;
+  }
+  
+  .dashboard-links ul li a {
+    color: #f5576c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .dashboard-links ul li a:hover {
+    color: #f093fb;
+  }
+  
+  @media (max-width: 768px) {
+    .login-card {
+      padding: 30px;
+    }
+  }
