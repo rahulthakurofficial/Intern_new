@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 // MongoDB Connection
 
 const connectdb = async ()=> {
-  await mongoose.connect('mongodb://localhost:27017/myapp', {
+  await mongoose.connect('mongodb://rahulthakur2314:Rt/1426@<hostname>/?ssl=true&replicaSet=atlas-sf4olm-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }); 
@@ -131,7 +131,7 @@ app.delete('/availability/:id', async (req, res) => {
 app.listen(5000, () => {
   console.log('Server is running on http://localhost:5000');
   connectdb();
-  
+
 });
 
 
