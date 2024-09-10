@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 // MongoDB Connection
 
 const connectdb = async ()=> {
-  await mongoose.connect('mongodb://rahulthakur2314:Rt/1426@<hostname>/?ssl=true&replicaSet=atlas-sf4olm-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0', {
+  await mongoose.connect('mongodb://rahulthakur2314:myPass%40word%3A2024@<hostname>/?ssl=true&replicaSet=atlas-sf4olm-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }); 
