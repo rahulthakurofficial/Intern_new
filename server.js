@@ -20,17 +20,35 @@ app.use(bodyParser.json());
 
 // } 
 
+// const connectdb = async () => {
+//   try {
+//     await mongoose.connect('mongodb://rahulthakur2314:myPass%40word%3A2024@mydata.mongodb.net/yourDatabaseName?ssl=true&replicaSet=atlas-sf4olm-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0', {
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true,
+//     }); 
+//     console.log("mongodb connected using mongoose");
+//   } catch (error) {
+//     console.error("Error connecting to MongoDB", error);
+//   }
+// };
+
+
+const mongoose = require('mongoose');
+
 const connectdb = async () => {
   try {
-    await mongoose.connect('mongodb://rahulthakur2314:myPass%40word%3A2024@mydata.mongodb.net/yourDatabaseName?ssl=true&replicaSet=atlas-sf4olm-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0', {
+    await mongoose.connect('mongodb+srv://rahulthakur2314:myPass%40word%3A2024@mydata.mongodb.net/yourDatabaseName?retryWrites=true&w=majority', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-    }); 
+    });
     console.log("mongodb connected using mongoose");
   } catch (error) {
     console.error("Error connecting to MongoDB", error);
   }
 };
+
+connectdb();
+
 
 
 
